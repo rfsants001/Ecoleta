@@ -1,2 +1,3 @@
-# NextLevelWeek
-Semana de tecnologia da RocketSeat, utilizando as tecnologias mais visadas no mercado, e criando uma aplicação web e mobile completa, utilizando React e Node junto com typescript.
+# Ecoleta
+
+Uma aplicação para a coleta de diversos tipos de lixos reciclaveis, feita tanto em HTML CSS e Javascript, quanto em React JS React Native e Node.
