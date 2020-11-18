@@ -21,11 +21,17 @@
     }
 
     #page-search-results .cards{
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
     #page-search-results .cards .card img{
         height: 200px;
+    }
+}
+
+@media (max-width: 520px){
+    #page-search-results .cards{
+        grid-template-columns: 1fr;
     }
 }
 
