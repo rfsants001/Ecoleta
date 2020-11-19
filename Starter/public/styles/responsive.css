@@ -29,6 +29,16 @@
     }
 }
 
+@media (max-width: 760px){
+    #page-create-point form .field-group {
+        flex-direction: column;
+    }
+
+    #page-create-point .field-group .field + .field {
+        margin-left: 0px;
+    }
+}
+
 @media (max-width: 520px){
     #page-search-results .cards{
         grid-template-columns: 1fr;
@@ -41,6 +51,7 @@
     }
 }
 
+/*ALTURA*/
 @media (max-height: 760px){
     #page-home {
         background-position-y: 200px;
