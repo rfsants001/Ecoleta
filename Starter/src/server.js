@@ -19,6 +19,19 @@ nunjucks.configure("src/views", {
 
 //HOME
 server.get("/", (req, res) => {
+    db.run(`
+        CREATE TABLE IF NOT EXISTS places (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            image TEXT,
+            name,
+            address TEXT,
+            address2 TEXT,
+            state TEXT,
+            city TEXT,
+            items TEXT
+        );
+    `);
+
     return res.render("index.html");
 });
 
@@ -33,20 +46,6 @@ server.get("/create-point", (req, res) => {
 });
 
 server.post("/create-point", (req, res) => {
-
-    db.run(`
-        CREATE TABLE IF NOT EXISTS places (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            image TEXT,
-            name,
-            address TEXT,
-            address2 TEXT,
-            state TEXT,
-            city TEXT,
-            items TEXT
-        );
-    `);
-
 
     const query = `
         INSERT INTO places (
@@ -70,7 +69,7 @@ server.post("/create-point", (req, res) => {
             req.body.items
         ]
 
-    function afterInsertData(err){
+     function afterInsertData(err){
         if(err){
             console.log(err);
             res.send("Erro no cadastro")
@@ -79,7 +78,7 @@ server.post("/create-point", (req, res) => {
 
         return res.render("create-point.html", { saved: true });
     }
-
+ 
     db.run(query, values, afterInsertData);
 
 });
